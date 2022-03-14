@@ -28,3 +28,32 @@ plt.show()
 cv2.circle(n_image, center = (300, 300), radius = 50, color = (255, 255, 255), thickness = -1)
 plt.imshow(n_image)
 plt.show()
+
+# Line
+cv2.line(n_image, pt1 = (0, 0), pt2 = (512, 512), color = (123, 142, 234), thickness = 2)
+plt.imshow(n_image)
+plt.show()
+
+# Text
+font = cv2.FONT_HERSHEY_SIMPLEX
+# org is the bottom left corner of the text box
+cv2.putText(
+    n_image,
+    text = 'Hello! World',
+    org = (10, 500),
+    fontFace = font,
+    fontScale = 1,
+    color = (155, 155, 155),
+    thickness = 3,
+    lineType = cv2.LINE_AA
+)
+plt.imshow(n_image)
+plt.show()
+
+# Polygon
+n_image = image.copy()
+vertices = np.array([[100, 300], [200, 200], [400, 300], [200, 400]], dtype = np.int32)
+pts = vertices.reshape((-1, 1, 2))
+cv2.polylines(n_image, [pts], isClosed = True, color = (0, 0, 255), thickness = 5)
+plt.imshow(n_image)
+plt.show()
