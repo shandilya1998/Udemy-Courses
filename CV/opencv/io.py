@@ -43,4 +43,13 @@ plt.imshow(n_image)
 plt.show()
 
 # Writing Images
-cv2.imwrite('data/00-puppy_flipped.jpg', cv2.cvtColor(n_image, cv2.COLOR_BGR2RGB))
+cv2.imwrite('data/00-puppy_flipped.jpg', cv2.cvtColor(n_image, cv2.COLOR_RGB2BGR))
+
+# Displaying Images
+while  True:
+    cv2.imshow('Puppy', cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
+    # If we waited atleast 1 milli second and press the escape key
+    # then break
+    if cv2.waitKey(1) & 0xFF == 27:
+        break
+cv2.destroyAllWindows()
