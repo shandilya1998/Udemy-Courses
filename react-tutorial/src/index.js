@@ -16,6 +16,8 @@ function Greeting(){
     return (
         <div>
             <h1>Hello World!</h1>
+            <Person />
+            <Message />
         </div>
     );
 }
@@ -29,6 +31,17 @@ const Greeting = () => {
     );
 };
 */
+
+// Implicit Return
+const Person = () => <h3>Shreyas Shandilya</h3>;
+
+// Explocit Return
+const Message = () => {
+    return (
+        <p>This is my Message</p>
+    );
+};
+
 
 ReactDOM.render(
     <Greeting />, document.getElementById('root')
