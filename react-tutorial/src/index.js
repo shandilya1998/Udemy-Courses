@@ -12,13 +12,17 @@ import ReactDOM from 'react-dom';
 // `class` attribute is replaced with `className`
 // Every elemt must be closed
 
-function Greeting(){
+function Booklist(){
     return (
-        <div>
-            <h1>Hello World!</h1>
-            <Person />
-            <Message />
-        </div>
+        <section>
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+        </section>
     );
 }
 
@@ -32,17 +36,30 @@ const Greeting = () => {
 };
 */
 
-// Implicit Return
-const Person = () => <h3>Shreyas Shandilya</h3>;
-
-// Explocit Return
-const Message = () => {
+const Book = () => {
     return (
-        <p>This is my Message</p>
+        <article>
+            <Image />
+            <Title />
+            <Author />
+        </article>
+    );
+};
+
+// Implicit Return
+const Image = () => <img 
+    src='https://images-eu.ssl-images-amazon.com/images/I/71g2ednj0JL._AC_UL604_SR604,400_.jpg' alt=''></img>;
+
+// Explicit Return
+const Title = () => {
+    return (
+        <h1>The Psychology of Money</h1>
     );
 };
 
 
+const Author = () => <h4>Morgan Housel</h4>;
+
 ReactDOM.render(
-    <Greeting />, document.getElementById('root')
+    <Booklist />, document.getElementById('root')
 );
