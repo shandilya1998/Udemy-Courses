@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
+// CSS
+import './index.css';
+
 // Component name must be caplitalised
 // Stateless Functional Component
 // A component must always return JSX
@@ -12,9 +15,11 @@ import ReactDOM from 'react-dom';
 // `class` attribute is replaced with `className`
 // Every elemt must be closed
 
+
+
 function Booklist(){
     return (
-        <section>
+        <section className="booklist">
             <Book />
             <Book />
             <Book />
@@ -38,7 +43,7 @@ const Greeting = () => {
 
 const Book = () => {
     return (
-        <article>
+        <article className="book">
             <Image />
             <Title />
             <Author />
