@@ -63,7 +63,11 @@ const Title = () => {
 };
 
 
-const Author = () => <h4>Morgan Housel</h4>;
+const Author = () => <h4 style={{
+    color: '#617d98',
+    fontSize: '0.75rem',
+    margin: '0.25rem'
+}}>Morgan Housel</h4>;
 
 ReactDOM.render(
     <Booklist />, document.getElementById('root')
