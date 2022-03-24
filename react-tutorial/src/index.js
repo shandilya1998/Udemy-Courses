@@ -26,32 +26,38 @@ const Greeting = () => {
 */
 
 // SETUP
-const src1 = 'https://images-eu.ssl-images-amazon.com/images/I/71g2ednj0JL._AC_UL604_SR604,400_.jpg';
-const src2 = 'https://images-eu.ssl-images-amazon.com/images/I/51S7KOWir7L._AC_UL604_SR604,400_.jpg';
-const title1 = 'The Psychology of Money';
-const title2 = 'Atomic Habits: The life-changing million copy bestseller';
-const author1 = 'Morgan Housel';
-const author2 = 'James Clear';
-
-const book3 = {
-    title: 'Ikigai: The Japanese secret to a long and happy life',
-    src: 'https://images-eu.ssl-images-amazon.com/images/I/81l3rZK4lnL._AC_UL604_SR604,400_.jpg',
-    author: 'Héctor García'
-};
-
-const book4 = {
-    title: 'DO EPIC SHIT',
-    author: 'Ankur Warikoo',
-    src: 'https://images-eu.ssl-images-amazon.com/images/I/41+grDTP2FL._AC_UL604_SR604,400_.jpg'
-};
+const books = [
+    {
+        key: 0,
+        title: 'The Psychology of Money',
+        author: 'Morgan Housel',
+        src: 'https://images-eu.ssl-images-amazon.com/images/I/71g2ednj0JL._AC_UL604_SR604,400_.jpg'
+    }, {
+        key: 1,
+        title: 'Ikigai: The Japanese secret to a long and happy life',
+        src: 'https://images-eu.ssl-images-amazon.com/images/I/81l3rZK4lnL._AC_UL604_SR604,400_.jpg',
+        author: 'Héctor García'
+    }, {
+        key: 2,
+        title: 'DO EPIC SHIT',
+        author: 'Ankur Warikoo',
+        src: 'https://images-eu.ssl-images-amazon.com/images/I/41+grDTP2FL._AC_UL604_SR604,400_.jpg'
+    }, {
+        key: 3,
+        title: 'Atomic Habits: The life-changing million copy bestseller',
+        author: 'James Clear',
+        src: 'https://images-eu.ssl-images-amazon.com/images/I/51S7KOWir7L._AC_UL604_SR604,400_.jpg'
+    }
+];
 
 function Booklist(){
     return (
         <section className="booklist">
-            <Book src={src1} title={title1} author={author1}/>
-            <Book src={src2} title={title2} author={author2}/>
-            <Book {...book3} />
-            <Book src={book4.src} title={book4.title} author={book4.author}/>
+            {
+                books.map(
+                    (book) => <Book {...book} />
+                )
+            }
         </section>
     );
 }
