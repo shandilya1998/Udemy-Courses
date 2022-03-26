@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import {books} from './books';
+import Book from './book';
 
 // CSS
 import './index.css';
@@ -25,31 +27,6 @@ const Greeting = () => {
 };
 */
 
-// SETUP
-const books = [
-    {
-        key: 0,
-        title: 'The Psychology of Money',
-        author: 'Morgan Housel',
-        src: 'https://images-eu.ssl-images-amazon.com/images/I/71g2ednj0JL._AC_UL604_SR604,400_.jpg'
-    }, {
-        key: 1,
-        title: 'Ikigai: The Japanese secret to a long and happy life',
-        src: 'https://images-eu.ssl-images-amazon.com/images/I/81l3rZK4lnL._AC_UL604_SR604,400_.jpg',
-        author: 'Héctor García'
-    }, {
-        key: 2,
-        title: 'DO EPIC SHIT',
-        author: 'Ankur Warikoo',
-        src: 'https://images-eu.ssl-images-amazon.com/images/I/41+grDTP2FL._AC_UL604_SR604,400_.jpg'
-    }, {
-        key: 3,
-        title: 'Atomic Habits: The life-changing million copy bestseller',
-        author: 'James Clear',
-        src: 'https://images-eu.ssl-images-amazon.com/images/I/51S7KOWir7L._AC_UL604_SR604,400_.jpg'
-    }
-];
-
 function Booklist(){
     return (
         <section className="booklist">
@@ -61,38 +38,6 @@ function Booklist(){
         </section>
     );
 }
-
-const Book = (props) => {
-    const {src, title, author} = props;
-    const clickHandler = (event) => {
-        console.log(event);
-        alert('hello world');
-    };
-    const clickHandler2 = (author) => {
-        alert(author);
-    };
-    return (
-        <article className="book" onMouseOver={() => {
-            console.log(title);
-        }}>
-            <img src={src} alt=''></img>
-            <h1 onClick={() => {alert(title)}} >{title}</h1>    
-            <h4 style={{
-                color: '#617d98',
-                fontSize: '0.75rem',
-                margin: '0.25rem'
-                }}>
-                    {author}
-            </h4>
-            <button type='button' onClick={clickHandler}>
-                Test Button 1
-            </button>
-            <button type='button' onClick={()=>{clickHandler2(author)}}>
-                Test Button 2
-            </button>
-        </article>
-    );
-};
 
 
 ReactDOM.render(
