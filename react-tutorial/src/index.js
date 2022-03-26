@@ -63,17 +63,33 @@ function Booklist(){
 }
 
 const Book = (props) => {
+    const {src, title, author} = props;
+    const clickHandler = (event) => {
+        console.log(event);
+        alert('hello world');
+    };
+    const clickHandler2 = (author) => {
+        alert(author);
+    };
     return (
-        <article className="book">
-            <img src={props.src} alt=''></img>
-            <h1>{props.title}</h1>    
+        <article className="book" onMouseOver={() => {
+            console.log(title);
+        }}>
+            <img src={src} alt=''></img>
+            <h1 onClick={() => {alert(title)}} >{title}</h1>    
             <h4 style={{
                 color: '#617d98',
                 fontSize: '0.75rem',
                 margin: '0.25rem'
                 }}>
-                    {props.author}
-            </h4>    
+                    {author}
+            </h4>
+            <button type='button' onClick={clickHandler}>
+                Test Button 1
+            </button>
+            <button type='button' onClick={()=>{clickHandler2(author)}}>
+                Test Button 2
+            </button>
         </article>
     );
 };
